@@ -39,9 +39,9 @@ export abstract class DiscordBot {
     private validateMessage(raidProg: MessageEmbedField)
     {
         try {
-            const prog = raidProg.value.split(':**')[1].trim();
-            const curr = prog.split('/')[0];
-            const diff = prog.split(' ')[1];
+            const match = raidProg.value.match(/([0-9]+)\/([0-9]+).+([A-Z])$/);
+            const curr = match[1];
+            const diff = match[3];
 
             return diff === 'M' && parseInt(curr, 10) >= parseInt(KILLED, 10);
         } catch(e) {
