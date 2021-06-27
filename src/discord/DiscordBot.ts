@@ -30,6 +30,7 @@ export abstract class DiscordBot {
             msg.timestamp = embed.timestamp;
             msg.type = embed.type;
             msg.title = embed.title;
+            msg.author = embed.author;
 
             channel.send({embed: msg});
         }
