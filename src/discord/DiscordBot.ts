@@ -43,7 +43,7 @@ export abstract class DiscordBot {
             const curr = prog.split('/')[0];
             const diff = prog.split(' ')[1];
 
-            return diff === 'M' && parseInt(curr, 10) > parseInt(KILLED, 10);
+            return diff === 'M' && parseInt(curr, 10) >= parseInt(KILLED, 10);
         } catch(e) {
             // fail silently-ish;
             console.error(e);
