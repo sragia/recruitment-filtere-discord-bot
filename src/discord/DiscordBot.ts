@@ -60,6 +60,7 @@ export abstract class DiscordBot {
     private async removeFilter(message: CommandMessage) {
         await this.dbManager.removeFilter(message.guild.id, message.channel.id)
         message.reply('Removed filter from this channel')
+        this.clearGuildCache(message.guild.id)
     }
 
     @Command('hello')
