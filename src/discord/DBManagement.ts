@@ -60,6 +60,12 @@ export class DBManagement {
         await this.setGuildData(guildId, guild)
     }
 
+    public async removeFilter(guildId: string, channelId: string) {
+        const guild = await this.getGuildData(guildId)
+        guild.filters[channelId] = null
+        await this.setGuildData(guildId, guild)
+    }
+
     public async setWatchChannel(guildId: string, channelId: string) {
         const guild = await this.getGuildData(guildId)
         guild.watchChannelId = channelId

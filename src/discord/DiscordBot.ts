@@ -56,6 +56,12 @@ export abstract class DiscordBot {
         return guild.filters
     }
 
+    @Command('filterremove')
+    private async removeFilter(message: CommandMessage) {
+        await this.dbManager.removeFilter(message.guild.id, message.channel.id)
+        message.reply('Removed filter from this channel')
+    }
+
     @Command('hello')
     private hello(message: CommandMessage) {
         message.reply('sup')
