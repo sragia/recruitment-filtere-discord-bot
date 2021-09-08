@@ -134,7 +134,7 @@ export abstract class DiscordBot {
 
     private validateMessage(raidProg: MessageEmbedField, filter: IFilter) {
         try {
-            const match = raidProg.value.match(/([0-9]+)\/([0-9]+).+([A-Z])$/)
+            const match = raidProg.value.match(/([0-9]+)\/([0-9]+).+([A-Z])/)
             const curr = match[1]
             const diff = match[3]
             return (
