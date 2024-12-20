@@ -5,10 +5,15 @@ const dbPass = process.env.MYSQL_PASS
 const dbName = process.env.MYSQL_DB
 const dbHost = process.env.MYSQL_HOST
 
+export type Classes = 'Death Knight' | 'Demon Hunter' | 'Druid' | 'Hunter' | 'Mage' | 'Monk' | 'Paladin' | 'Priest' | 'Rogue' | 'Shaman' | 'Warlock' | 'Warrior' | 'Evoker';
+export type Role = 'Healer' | 'Tank' | 'Melee' | 'Ranged' | 'Support'
+
 export interface IFilter {
     min: number
     diff: 'N' | 'H' | 'M'
     max?: number
+    class?: Classes
+    role?: Role
 }
 
 export interface IGuild {
