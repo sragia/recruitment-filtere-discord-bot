@@ -220,7 +220,7 @@ export abstract class DiscordBot {
         if (channel) {
             const embed = message.embeds[0];
             const author = message.embeds[0].author.name;
-            const match = author.match(/^([A-Za-z]+) - ([A-Za-z ]+) \(/);
+            const match = author.match(/^([\p{L}]+) - ([\p{L} ]+) \(/u);
             if (match) {
                 const name = match[1];
                 const server = match[2];
